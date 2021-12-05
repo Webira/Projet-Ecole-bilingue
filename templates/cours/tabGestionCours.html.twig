@@ -1,0 +1,69 @@
+{% extends 'panel_admin.html.twig' %}
+
+{% block title %}{{ parent() }} | Back Office | Tableau de gestion des Cours{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://bootswatch.com/4/lumen//bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/styleTabResponsJS.css') }}">
+    <script src="{{ asset('js/scriptTab.js') }}" async></script>
+{% endblock %}
+
+{% block body %}
+
+    <H2>Tableau de gestion des Cours</H2>
+    <div class="btn-right my-3 text-right">
+        <a href="{{ path('add_cours') }}" class="btn btn-warning">Ajouter un Atelier</a>
+    </div>
+    <div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Date_creat.</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Jour</th>
+                <th scope="col">Duree</th>
+                <th scope="col">Age</th>
+                <th scope="col">Echelle de prix (euro/heure)</th>
+                <th scope="col">Numéro de la salle</th>
+                <th scope="col">Professor</th>
+                <th scope="col">Description d'Atelier</th>
+                <th scope="col">Photo</th>
+                <th scope="col">Eleves</th>
+                <th scope="col">Modifier</th>
+                <th scope="col">Supprimer</th>
+{#                <th colspan="2">Actions</th>#}
+
+            </tr>
+        </thead>
+
+        {% for cours in courses %}
+        <tbody>
+
+            <tr class="table-default">
+                <td>{{ cours.id }}</td>
+                <td>{{ cours.dateAt | date("d-m-y") }}</td>
+                <td>{{ cours.titre}}</td>
+                <td>{{ cours.day  }}</td>
+                <td>{{ cours.duree }}</td>
+                <td>{{ cours.age }}</td>
+                <td>{{ cours.price }}</td>
+                <td>{{ cours.class }}</td>
+                <td>{{ cours.professor.nom }}</td>
+                <td>{{ cours.description | slice(0,100) }}...<a href="{{ path('showcours', {id:cours.id}) }}">
+                    lire la suite</a></td>
+                <td>{{ cours.photo }}</td>
+                <td>{% for eleve in cours.eleves %}
+                        {{ eleve.nom }} {{ eleve.prenom }}
+                    {% endfor %}</td>
+                <td><a href="{{ path('modif_cours', {id:cours.id}) }}" class="btn btn-warning btn-sm">Modifier</a></td>
+                <td><a href="{{ path('delete_cours', {id:cours.id}) }}" class="btn btn-warning btn-sm">Supprimer</a></td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    </div>
+    <script src="{{ asset('js/scriptTab.js') }}"></script>
+
+{% endblock %}

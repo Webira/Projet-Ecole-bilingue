@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un cours{% endblock %}
+
+{#{% extends 'panel_admin.html.twig' %}#}
+
+{#{% block title %}{{ parent() }} | Back Office | Ajouter un cours{% endblock %}#}
+
+
+{% block body %}
+
+            <h2>Ajouter un cours </h2>
+
+
+                {{ form_start(formCours) }}
+
+                {{ form_row(formCours.titre,{'attr':{'placeholder':"Titre de l'atelier", 'class':"form-control" }}) }}
+                {{ form_row(formCours.day,{'attr':{'placeholder':"Jour de la semaine : samedi ou mercredi", 'class':"form-control" }}) }}
+                {{ form_row(formCours.duree,{'attr':{'placeholder':"Heures de début et de fin de l'atelier.   Example : 9h30 - 10h30", 'class':"form-control" }}) }}
+                {{ form_row(formCours.age,{'attr':{'placeholder':"Fourchette d'âge.   Example : 3-4", 'class':"form-control" }} ) }}
+                {{ form_row(formCours.price,{'attr':{'placeholder':"Echelle de prix, euro/heure.   Example : 12-14", 'class':"form-control" }} ) }}
+                {{ form_row(formCours.class,{'attr':{'placeholder':"Numéro de la salle de l'atelier", 'class':"form-control" }}) }}
+                {{ form_row(formCours.professor,{'attr':{'placeholder':"", 'class':"form-control" }}) }}
+                {{ form_row(formCours.description,{'attr':{'placeholder':"",  'class':"form-control"}}) }}
+                {{ form_row(formCours.photo,{'attr':{'placeholder':"", 'src':"asset'('images/imageCours/' ~ formCours.photo)", 'class':"form-control"  }}) }}
+{#    <img src="{{ asset('images/imageCours/' ~ formCours.photo) }}" class="d-block w-100" height="200" alt="">#}
+
+
+               <hr>
+                {{ form_end(formCours) }}
+
+{% endblock %}

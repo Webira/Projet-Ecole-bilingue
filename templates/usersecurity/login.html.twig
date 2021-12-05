@@ -1,0 +1,140 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+{#<form method="post">#}
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            vous êtes connecté en tant que {{ app.user.nom }}, <a href="{{ path('logout') }}">Deconnection</a>
+        </div>
+    {% endif %}
+
+        <div class="text-center">
+            <h3 class="mb-3 font-weight-normal">Veuillez vous connectez</h3>
+        </div>
+        {% for message in app.flashes('success') %}
+            <div class="row justify-content-center mt-4">
+                <div class="alert alert-success col-md-6 text-center">{{ message }}</div>
+            </div>
+        {% endfor %}
+        {% for message in app.flashes('error') %}
+            <div class="row justify-content-center mt-4">
+                <div class="alert alert-danger col-md-6 text-center">{{ message }}</div>
+            </div>
+        {% endfor %}
+
+{#    {% if is_granted('ROLE_USER') %}#}
+
+    <form action="{{  path('app_login') }}" method="post">
+        <div class="form-group">
+            <label for="inputEmail">Adresse email</label>
+            <input placeholder="Adresse email..." name="_username" type="text" id="inputEmail"
+                   class="form-control" autocomplete="email" required autofocus>
+{#/////////////////#}
+{#            <input placeholder="Adresse email..." value="{{ last_username }}" name="email" type="email" id="inputEmail"#}
+{#                   class="form-control" autocomplete="email" required autofocus>#}
+{#///////////////////#}
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Mot de passe</label>
+            <input placeholder="Mot de passe..." required name="_password" type="password" id="inputPassword"  class="form-control">
+        </div>
+
+{#      <input type="checkbox" id="show_password"><br>Show Password#}
+
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" id="show_password"><br>Show Password
+        </label>
+    </div>
+
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"><br>
+{#        <a href="{{ path('forgotPassword') }}">Mot de passe oublié ?</a><br>#}
+        <h4><a href="{{ path('registuser') }}">Pas encore inscrit ? Veuillez vous enregistrez</a></h4>
+        <br>
+        <button type="submit" class="btn btn-secondary mt-3">Connexion</button>
+
+
+{#      Essaie oneuser  ////////////////////////////    #}
+{#                    {% if app.user %}#}
+{#                        <div class="mb-3">#}
+{#                            vous êtes connecté en tant que {{ app.user.nom }}, <a href="{{ path('showeuser') }}">Mon compte</a>#}
+{#                        </div>#}
+{#                    {% endif %}#}
+
+    </form>
+{#</form>#}
+    <script>
+        document.getElementById("show_password").addEventListener("click", function(){
+
+            var pw = document.getElementById("inputPassword");
+            if (pw.type === "password") {
+                pw.type = "text";
+            } else {
+                pw.type = "password";
+            }
+
+        });
+    </script>
+{% endblock %}
+
+{#    <label for="inputPassword">Mot de passe</label>#}
+{#    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>#}
+{#    {{ form_row(formUser.confirm_password, {'label' : 'Confirmation du mot de passe',#}
+{#        'attr':{'placeholder':"Répétez votre mot de passe", 'class':"form-control" }}) }}#}
+{#    <input type="checkbox"  id="show_password">   Afficher le mot de passe#}
+{#    <input type="hidden" name="_csrf_token"#}
+{#           value="{{ csrf_token('authenticate') }}">#}
+{#    <hr>#}
+{#    <button type="submit" class="btn btn-secondary">Enregistrer</button>#}
+{#    <script>#}
+{#        document.getElementById("show_password").addEventListener("click", function(){#}
+
+{#            var pw = document.getElementById("inputPassword");#}
+{#            if (pw.type === "password") {#}
+{#                pw.type = "text";#}
+{#            } else {#}
+{#                pw.type = "password";#}
+{#            }#}
+{#        });#}
+{#    </script>#}
+
+
+
+
+{#    {% if error %}#}
+{#        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+{#    {% endif %}#}
+
+
+{#    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>#}
+{#    <label for="inputEmail">Email</label>#}
+{#    <input type="email" value="" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>#}
+{#    <label for="inputPassword">Password</label>#}
+{#    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>#}
+
+{#    <input type="hidden" name="_csrf_token"#}
+{#           value="{{ csrf_token('authenticate') }}"#}
+{#    >#}
+
+{#    #}{##}
+{#        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.#}
+{#        See https://symfony.com/doc/current/security/remember_me.html#}
+
+{#        <div class="checkbox mb-3">#}
+{#            <label>#}
+{#                <input type="checkbox" name="_remember_me"> Remember me#}
+{#            </label>#}
+{#        </div>#}
+{#    #}
+
+{#    <button class="btn btn-lg btn-primary" type="submit">#}
+{#        Sign in#}
+{#    </button>#}
+{#</form>#}
+

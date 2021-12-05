@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Eleve {{ eleve.id }}{% endblock %}
+
+{% block body %}
+
+         {% if eleve is not null %}
+             {{eleve.id}}
+         {% else %}
+             N/A
+         {% endif %}
+    <div class="show-eleve">
+
+        <h3>Prenom : {{ eleve.prenom }}</h3>
+        <h3>Nom : {{ eleve.nom }}</h3>
+        <h4>Date de naissance : {{ eleve.birthdate | date("d-m-y") }}</h4>
+
+        <h4>Age : {{ eleve.age }}</h4>
+        <h4>Date d'inscription : {{ eleve.date | date("d-m-y") }}</h4>
+
+    </div>
+
+    <h3>Les Ateliers :</h3>
+ {% if eleve.cours is empty %}
+     <div>
+     <p>Aucun Ateliers</p>
+     <a href="{{ path('ateliers') }}"
+        class="btn btn-warning"></a>
+     </div>
+    {% else %}
+
+        <div class="row d-flex justify-content-center text-center">
+             {% for cours in eleve.cours %}
+
+                <div class="card m-1" style="width: 18rem;">
+                    <div class="card-body">
+
+                        {{ cours.dateAt | date("d-m-y") }}
+                        <h5 class="card-title">{{ cours.titre }}</h5>
+                        <h5 class="card-subtitle mb-2 text-muted">{{ cours.day }}</h5>
+                        <h5 class="card-duree">{{ cours.duree }}</h5>
+                        <h5 class="card-professor">Professor: {{ cours.professor.nom }}</h5>
+                        <p class="card-text">{{ cours.description | slice(0,200) }}...<a href="">
+                                lire la suite</a></p>
+                        <a href="{{ path('showcours', {id: cours.id }) }}" class="btn btn-warning">Atelier</a>
+                    </div>
+
+                </div>
+
+    {% endfor %}
+        </div>
+
+    {% endif %}
+    <hr>
+    <a href="{{ path('modif_eleve', {id: eleve.id }) }}" class="btn btn-warning">Modifier l'inscription d'eleve</a>
+
+{% endblock %}

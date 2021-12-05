@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification un User{% endblock %}
+
+{% block body %}
+
+    <h2>Modification le compte d'un Utilisateur</h2>
+{#    <h2>Modification un Utilisateur {{ app.user.prenom  }} {{ app.user.nom}} </h2>#}
+
+{#    {% if is_granted('ROLE_USER') %}#}
+
+    {{ form_start(formodifUser) }}
+
+    {{ form_row(formodifUser) }}
+{#        <a href="{{ path('modif_user', {id: user.id}) }}" class="btn btn-secondary">Modiffier</a>#}
+
+{#    {% elseif is_granted('ROLE_USER') %}#}
+{#        <a  href="{{path ('registuser') }}" class="btn btn-secondary">Créer un compte</a>#}
+{#    {% endif %}#}
+{#    <button type="submit" class="btn btn-warning">Enregistrer</button>#}
+    {{ form_end(formodifUser) }}
+
+
+{% endblock %}

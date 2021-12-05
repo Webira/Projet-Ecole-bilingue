@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un professor{% endblock %}
+
+{#{% extends 'panel_admin.html.twig' %}#}
+
+{#{% block title %}{{ parent() }} | Back Office | Ajouter/Modifier un professor{% endblock %}#}
+{% form_theme formProf 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+
+    <h2>{% if editModeProf %}
+            Enregistrer les modifications
+        {% else %}
+            Ajouter un nouveau professeur
+        {% endif %}</h2>
+
+    {{ form_start(formProf) }}
+    {{ form_row(formProf) }}
+    {{ form_end(formProf) }}
+
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} User {% endblock %}
+
+{% block body %}
+    <h2>Votre compte</h2>
+    <div class="show-user">
+
+        <h3>Prenom : {{ user.prenom }}</h3>
+        <h3>Nom : {{ user.nom }}</h3>
+        <h4>Users Id : {{ user.id }}</h4>
+        <h4>Numéro du téléphone : {{ user.phone }}</h4>
+        <h4>Adresse email : {{ user.email }}</h4>
+        <h4>Adresse : {{ user.adress }} {{ user.cp }}</h4>
+    </div>
+    <a class="btn btn-secondary" href="{{ path ('app_login') }}"><strong>Connectez-vous à présent pour continuer à naviguer</strong></a>
+
+    <h3>Les Eleves :</h3>
+    {% if user.eleves is empty %}
+        <div>
+            <h5>Aucun eleves</h5>
+        </div>
+    {% else %}
+        {% for eleve in user.eleves %}
+
+            <div class="show-eleve">
+
+                <h3>Prenom : {{ eleve.prenom }} {{ eleve.nom }}</h3>
+{#                <h4>Nom : {{ eleve.nom }}</h4>#}
+                <h4>Date de naissance : {{ eleve.birthdate | date("d-m-y") }}</h4>
+                <h4>Age : {{ eleve.age }}</h4>
+                <h4>Date d'inscription : {{ eleve.date | date("d-m-y") }}</h4>
+
+            </div>
+
+                <h3>Les Ateliers inscrits  :</h3>
+                {% if eleve.cours is empty %}
+                    <div>
+                        <h5>Aucun Ateliers</h5>
+                        <a href="{{ path('ateliers') }}"
+                           class="btn btn-secondary"></a>
+                    </div>
+                {% else %}
+
+                    <div class="row d-flex justify-content-center text-center">
+                        {% for cours in eleve.cours %}
+
+                            <div class="card m-1" style="width: 18rem;">
+                                <div class="card-body">
+                                    {{ cours.dateAt | date("d-m-y") }}
+                                    <h5 class="card-title">{{ cours.titre }}</h5>
+                                    <h5 class="card-subtitle mb-2 text-muted">{{ cours.day }}</h5>
+                                    <h5 class="card-duree">{{ cours.duree }}</h5>
+                                    <h5 class="card-professor">Professor: {{ cours.professor.nom }}</h5>
+                                    <p class="card-text">{{ cours.description | slice(0,200) }}...<a href="">
+                                            lire la suite</a></p>
+                                    <a href="{{ path('showcours', {id: cours.id }) }}" class="btn btn-secondary">Atelier</a>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+                    </div>
+
+                {% endif %}
+
+        {% endfor %}
+
+    {% endif %}
+    <hr>
+{#    <a href="{{ path('modif_eleve', {id: eleve.id }) }}" class="btn btn-warning">Modifier l'inscription d'eleve</a>#}
+    <a href="{{ path('modif_user', {id: user.id }) }}" class="btn btn-secondary">Modifier l'inscription d'un user</a>
+
+{% endblock %}

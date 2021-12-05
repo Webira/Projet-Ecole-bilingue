@@ -1,0 +1,78 @@
+h2 {
+    font-weight: bold;
+    color: #666;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+.table thead th {
+    vertical-align: bottom;
+    padding: 10px;
+    text-align: left;
+    border: solid 1px black;
+}
+
+tbody {
+    border: solid 1px black;
+}
+table {
+    width: 100%;
+    border-collapse: collapse
+}
+th {
+    background-color: white;
+    color: black;
+    text-indent: initial;
+}
+
+th,td {
+padding: 10px;
+text-align: center!important;
+border: solid 1px black;
+}
+
+tr:nth-child(odd) {
+background-color: floralwhite;
+
+}
+
+@media only screen and (max-width: 700px) {
+    table, thead, tbody, tr, th, td {
+        display: block;
+    }
+    thead {
+        display: none;
+    }
+
+    td {
+        padding-left: 150px;
+        position: relative;
+        background: white;
+    }
+
+    td:nth-child(odd) {
+        background-color: floralwhite;
+    }
+
+    td::before {
+        padding: 10px;
+        content: attr(data-label);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 130px;
+        bottom: 0;
+        background-color: white;
+        color: black;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+    }
+    tr {
+        margin-bottom: 1rem;
+    }
+}
+
+
+

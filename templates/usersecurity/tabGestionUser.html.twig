@@ -1,0 +1,78 @@
+{% extends 'panel_admin.html.twig' %}
+
+{% block title %}{{ parent() }} | Back Office | Tableau de gestion de Users (parents){% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://bootswatch.com/4/lumen//bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/styleTabResponsJS.css') }}">
+
+    <script src="{{ asset('js/scriptTab.js') }}" async></script>
+{% endblock %}
+
+{% block body %}
+    <H2>Tableau de gestion des Users (parents)</H2>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Roles</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">Email</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">Code postale</th>
+                <th scope="col">Telephon</th>
+                <th scope="col">Eleves=enfants de User</th>
+    {#            <th scope="col">Courses choisi par Elèves</th>#}
+                <th scope="col">Modifier Role</th>
+                <th scope="col">Modifier</th>
+                <th scope="col">Supprimer</th>
+                <th scope="col">Show User</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            {% for user in users %}
+                <tr class="table-default">
+                    <td>{{ user.id }}</td>
+                                 {# On boucle sur les rôles #}
+                    <td>{% for role in user.roles %}
+                        {% if role == "ROLE_USER" %}Utilisateur
+                        {% elseif role == "ROLE_REGIST" %}Registrateur
+                        {% elseif role == "ROLE_ADMIN" %}Administrateur
+                        {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{{ user.nom }}</td>
+                    <td>{{ user.prenom }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.adress }}</td>
+                    <td>{{ user.cp }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td>{% for eleve in user.eleves %}
+                        {{ eleve.nom }} {{ eleve.prenom }}
+                        {% endfor %}</td>
+        {#            <td>{% for eleve in user.eleves %}#}
+        {#                    {% for cour in eleve.cours %}#}
+        {#                        {{ cour.titre }}#}
+        {#                    {% endfor %}#}
+        {#                {% endfor %}</td>#}
+        {#            {% if user.roles != ["ROLE_ADMIN"] %}#}
+                    <td><a href="{{ path('admin_modif_userrole', {id: user.id}) }}" class="btn btn-warning btn-sm">Modifier Role</a></td>
+        {#            {% else %}#}
+        {#                <td> </td>#}
+        {#            {% endif %}#}
+                    <td><a href="{{ path('modif_user', {id: user.id}) }}" class="btn btn-warning btn-sm">Modifier User</a></td>
+                    <td><a href="{{ path('admin_delete_user', {id: user.id}) }}" class="btn btn-warning btn-sm">Supprimer</a></td>
+                    <td><a href="{{ path('showeuser', {id: user.id}) }}" class="btn btn-warning btn-sm">ShowUser</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+    <script src="{{ asset('js/scriptTab.js') }}"></script>
+
+{% endblock %}

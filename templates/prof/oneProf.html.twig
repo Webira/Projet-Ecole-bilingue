@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos professors{% endblock %}
+
+{% block body %}
+
+
+{#         {% if professor is not null %}#}
+{#             {{professor.id}}#}
+{#         {% else %}#}
+{#             N/A#}
+{#         {% endif %}#}
+
+    <div class="col-md-3 m-2 mt-4 p-2 text-center" style='box-shadow: 2px 2px 4px grey'>
+    <div class="card mb-3">
+              <h3 class="card-header">Professor</h3>
+              <div class="card-body">
+                <h3 class="card-title">{{ professor.nom }}</h3>
+                <h3 class="card-title">{{ professor.prenom }}</h3>
+                <h4 class="card-title">{{ professor.id }}</h4>
+              </div>
+{#                <h3 class="card-title">{{ professor.cours }}</h3>#}
+{#                                    {% for cour in professor.cours %}#}
+{#                                        {{ cour.titre }}#}
+{#                                    {% endfor %}</h3>#}
+
+              <div class="card-body">
+                <p class="card-text">{{ professor.description | raw }}</p>
+              </div>
+              <div class="card-body">
+                <a href="{{ path('allprof') }}" class="text-muted btn btn-secondary">Nos Professeurs</a><hr>
+
+              </div>
+         </div>
+    </div>
+
+
+
+
+{% endblock %}

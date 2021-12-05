@@ -1,0 +1,60 @@
+{% extends 'panel_admin.html.twig' %}
+
+{% block title %}{{ parent() }} | Back Office | Tableau de gestion des Eleves{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://bootswatch.com/4/lumen//bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/styleTabResponsJS.css') }}">
+
+    <script src="{{ asset('js/scriptTab.js') }}" async></script>
+{% endblock %}
+
+{% block body %}
+
+    <H2>Tableau de gestion des Eleves</H2>
+    <div class="btn-right my-3 text-right">
+        <a href="{{ path('add_eleve') }}" class="btn btn-warning">Ajouter un Eleve</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Date d'inscription</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">Date de naissance</th>
+                <th scope="col">Age</th>
+                <th scope="col">Nom de User(parent)</th>
+                <th scope="col">Courses</th>
+                <th scope="col">Modifier</th>
+                <th scope="col">Supprimer</th>
+                <th scope="col">Show Eleve</th>
+            </tr>
+            </thead>
+
+           <tbody>
+            {% for eleve in eleves %}
+                <tr class="table-default">
+                <td>{{ eleve.id }}</td>
+                <td>{{ eleve.date | date("d-m-y") }}</td>
+                <td>{{ eleve.nom }}</td>
+                <td>{{ eleve.prenom }}</td>
+                <td>{{ eleve.birthdate | date("d-m-y") }}</td>
+                <td>{{ date('now').diff((date(eleve.birthdate))).format('%y ') }}</td>
+                <td>{{ eleve.user.nom }} </td>
+                <td>{% for cour in eleve.cours %}
+                    {{ cour.titre }}
+                    {% endfor %}</td>
+                <td><a href="{{ path('modif_eleve', {id:eleve.id}) }}" class="btn btn-warning btn-sm">Modifier</a></td>
+                <td><a href="{{ path('delete_eleve', {id: eleve.id}) }}" class="btn btn-warning btn-sm">Supprimer</a></td>
+                <td><a href="{{ path('showeleve', {id: eleve.id}) }}" class="btn btn-warning btn-sm">ShowEleve</a></td>
+                </tr>
+
+           {% endfor %}
+           </tbody>
+        </table>
+    </div>
+
+    <script src="{{ asset('js/scriptTab.js') }}"></script>
+{% endblock %}

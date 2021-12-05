@@ -1,0 +1,38 @@
+{% extends 'panel_admin.html.twig' %}
+
+{% block title %}{{ parent() }} | Back Office | Gestion des Professeurs{% endblock %}
+
+{% block body %}
+
+    <H2 style="font-weight:bold; color:#666;">Gestion des Professeurs</H2>
+        <section class="professor">
+            <div class="row d-flex justify-content-center text-center">
+                {% for professor in professors %}
+
+                    <div class="col-md-3 m-2 mt-4 p-2 text-center" style='box-shadow: 2px 2px 4px grey'>
+                        <h3 class="card-header">{{ professor.nom }}</h3>
+                        <h3 class="card-header">{{ professor.prenom }}</h3>
+                        <div class="card">
+                            <h5 class="card-title">{{ professor.id }}</h5>
+                          <h5 class="card-title">
+                                {% for cour in professor.cours %}
+                                    {{ cour.titre }}
+                                {% endfor %}</h5>
+                          <h5>{{ professor.description | slice(0,200) }}...<a href="{{ path('showprof', {id:professor.id}) }}">
+                                    lire la suite</a></h5>
+
+                            <a class="btn btn-secondary col-md-12" href="{{ path('modif_prof', {id:professor.id}) }}">Modifier</a>
+                            <a class="btn btn-secondary col-md-12" href="{{ path('add_prof', {id: professor.id} ) }}">Ajouter un Prof</a>
+                            <a class="btn btn-secondary col-md-12" href="{{ path('delete_prof', {id: professor.id} ) }}" style="color: red;"
+                                   onclick="return confirm('êtes vous sûr de vouloire supprimer la carte de Prof ?')">
+                                    <i class="bi bi-trash"></i></a>
+
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </section>
+
+
+{% endblock %}

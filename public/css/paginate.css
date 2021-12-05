@@ -1,0 +1,63 @@
+.pagination{
+    text-align: center;
+}
+
+.current {
+    background-color: #DDDDDD;
+    color: black;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 20px;
+    text-align: center;
+}
+
+.page{
+    background-color: #DDDDDD;
+    color: black;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 20px;
+    text-align: center;
+}
+
+.next{
+    background-color: #DDDDDD;
+    color: black;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 20px;
+    text-align: center;
+}
+
+.last{
+    background-color: #DDDDDD;
+    color: black;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 20px;
+    text-align: center;
+}
+
+.previous{
+    background-color: #DDDDDD;
+    color: black;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 20px;
+    text-align: center;
+}
+
+.first{
+    background-color: #DDDDDD;
+    color: black;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 20px;
+    text-align: center;
+}

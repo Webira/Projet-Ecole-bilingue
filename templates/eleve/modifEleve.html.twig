@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un Eleve{% endblock %}
+
+{% block body %}
+
+<h2>Modifier un Eleve pour le parent: {{ app.user.prenom  }} {{ app.user.nom}} </h2>
+
+
+        {{ form_start(formodifEleve) }}
+
+        {{ form_row(formodifEleve) }}
+        {{ form_end(formodifEleve) }}
+
+
+{% endblock %}

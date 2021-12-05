@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription un eleve{% endblock %}
+
+{% block body %}
+
+
+    <h2>Ajouter un eleve pour le parent: {{ app.user.prenom  }} {{ app.user.nom}} </h2>
+
+        {{ form_start(formEleve) }}
+
+        {{ form_row(formEleve.nom) }}
+        {{ form_row(formEleve.prenom) }}
+        {{ form_row(formEleve.birthdate) }}
+         {{ form_row(formEleve.age) }}
+{#        {{ date('now').diff((date(eleve.birthdate))).format('%y ') }}#}
+        {{ form_row(formEleve.cours) }}
+
+        {{ form_end(formEleve) }}
+
+{% endblock %}

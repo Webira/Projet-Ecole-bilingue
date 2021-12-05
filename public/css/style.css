@@ -1,0 +1,82 @@
+h1 {
+    text-align: center;
+    color: darkslateblue;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 4px 4px 3px #77f;
+}
+
+h2 {
+    color: brown;
+    font-size: 30px;
+}
+
+h3 {
+    color: royalblue;
+    font-size: 25px;
+}
+
+.navbg {
+    background-color: honeydew;
+}
+
+.Image_logo{
+    width: 85px;
+    height: 65px;
+}
+.navbar-nav{
+    color: black;
+    font-size:18px;
+}
+.titlesite{
+    color: midnightblue;
+    font-size: 30px;
+}
+/*-----body---------*/
+.container{
+    background-color: aliceblue;
+    min-height: 75vh;
+}
+
+.display-4{
+    text-align: center;
+    color: darkslateblue;
+}
+
+section {
+    padding: 10px;
+    text-align: center;
+    color: black;
+    border: solid 1px black;
+    background-color: rosybrown;
+}
+.card-header{
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+.btn.btn-secondary{
+    text-align: center;
+    color: black;
+    font-size: 15px;
+}
+.font-accuiel{
+    background-color: rgb(1% 0 1%);
+}
+.col-md-6{
+    border-bottom: 1px;
+    color: black;
+    font-size: 20px;
+}
+.critere{
+    text-align: center;
+}
+/*---footer--------*/
+footer.border-top {
+    background-color: #f6f6f6!important;
+
+}
+.text-small{
+    color: black;
+}
+

@@ -1,0 +1,27 @@
+{% extends 'panel_admin.html.twig' %}
+
+{% block title %}Accuiel d'Administrateur{% endblock %}
+
+{% block body %}
+
+    <a class="btn btn-secondary col-md-12" href="#"></a>
+
+    <hr>
+    <li><a href="{{ path('admin_allusers') }}" class="secondary"><strong>Tableau de Gestion des Utilisateurs</strong></a></li>
+{#    <li> <a href="{{ path('admin_modif_userrole', {id: user.id}) }}" class="btn btn-warning">Modifier Role</a></li>#}
+    <hr>
+    <li><a class="nav-item" href="{{ path('add_cours') }}"  ><strong>Ajouter un Atelier</strong></a></li>
+    <li><a class="nav-item" href="{{ path ('ateliers') }}" ><strong>Ateliers creatifs</strong></a></li>
+    <li><a class="nav-item" href="{{ path('tabateliers') }}" ><strong>Tableau de Gestion des Ateliers</strong></a></li>
+
+{#     <li><a class="nav-link" href="{{ path ('modif_cours, {id:cours.id}') }}">Modifier un Atelier</a></li>#}
+    <hr>
+    <li><a href="{{ path ('eleves') }}" class="secondary"><strong>Tableau de Gestion des eleves</strong></a></li>
+
+{#    <li><a class="nav-link" href="{{ path ('showeleve, {id:eleve.id}') }}"><strong>Fichier d'un Eleve</strong></a></li>#}
+    <hr>
+    <li><a href="{{ path ('allprof') }}" class="secondary"><strong>Tableau de Gestion des professeurs</strong></a></li>
+    <li><a href="{{ path ('add_prof') }}" class="secondary"><strong>Ajouter un professeur</strong></a></li>
+{#    <li><a class="nav-link" href="{{ path ('showprof, {id:prof.id}') }}"><strong>Fichier d'un Professor</strong></a></li>#}
+
+{% endblock %}

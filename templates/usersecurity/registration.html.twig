@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Enregistrement{% endblock %}
+
+{% block body %}
+<div class="text-center">
+        <h3 class="mb-3 font-weight-normal">Créez votre compte</h3>
+</div>
+    {{ form_start(formUser) }}
+    {{ form_row(formUser.nom, {'label' : 'Nom d\'utilisateur', 'attr':{'class':"form-control" }}) }}
+    {{ form_row(formUser.prenom, {'label' : 'Prenom d\'utilisateur', 'attr':{'class':"form-control" }}) }}
+    {{ form_row(formUser.phone, {'label' : 'Numéro du téléphone', 'attr':{'placeholder':"", 'class':"form-control" }}) }}
+    {{ form_row(formUser.adress, {'label' : 'Adresse','attr':{'placeholder':"L'adresse postale et le nom de la ville", 'class':"form-control" }}) }}
+    {{ form_row(formUser.cp, {'label' : 'Code postale','attr':{'placeholder':"", 'class':"form-control" }}) }}
+    {{ form_row(formUser.email, {'label' : 'Adresse email', 'attr':{'placeholder':"", 'class':"form-control" }}) }}
+    {{ form_row(formUser.password, {'label' : 'Mot de passe','attr':{'placeholder':"Saisissez votre mot de passe", 'class':"form-control" }}) }}
+   {{ form_row(formUser.confirm_password, {'label' : 'Confirmation du mot de passe','attr':{'placeholder':"Répétez votre mot de passe", 'class':"form-control" }}) }}
+{#    <button type="submit" class="btn btn-secondary">Modiffier</button>#}
+
+
+    {{ form_end(formUser) }}
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'panel_admin.html.twig' %}
+
+{% block title %}{{ parent() }} | Back Office | Tableau de gestion de Roles{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://bootswatch.com/4/lumen//bootstrap.min.css">
+{#    <link rel="stylesheet" href="{{ asset('css/styleTab.css') }}">#}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<H2>Tableau de gestion des Roles</H2>
+
+    <h3>Modifier un Role d'utilisateur</h3>
+
+    {{ form_start(formodifRole) }}
+
+    {% if user.roles is not same as (formodifRole.roles) %}
+        {{ form_row(formodifRole) }}
+    {% endif %}
+
+    {{ form_end(formodifRole) }}
+
+
+{% endblock %}

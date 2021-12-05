@@ -1,0 +1,27 @@
+{% extends 'panel_admin.html.twig' %}
+
+{% block title %}{{ parent() }} | Back Office | Modifier un Atelier{% endblock %}
+
+
+{% block body %}
+
+    <h2>Modifier un Atelier</h2>
+
+    {{ form_start(formodifCours) }}
+
+    {{ form_row(formodifCours.titre,{'attr':{'placeholder':"Titre de l'atelier", 'class':"form-control" }}) }}
+    {{ form_row(formodifCours.day,{'attr':{'placeholder':"Jour de la semaine : samedi ou mercredi", 'class':"form-control" }}) }}
+
+    {{ form_row(formodifCours.duree,{'attr':{'placeholder':"Heures de début et de fin de l'atelier", 'class':"form-control" }}) }}
+    {{ form_row(formodifCours.age,{'attr':{'placeholder':"Fourchette d'âge", 'class':"form-control" }}) }}
+    {{ form_row(formodifCours.price,{'attr':{'placeholder':"Echelle de prix", 'class':"form-control" }} ) }}
+    {{ form_row(formodifCours.class,{'attr':{'placeholder':"Numéro de la salle de l'atelier", 'class':"form-control" }}) }}
+    {{ form_row(formodifCours.professor,{'attr':{'placeholder':"", 'class':"form-control" }}) }}
+    {{ form_row(formodifCours.description,{'attr':{'placeholder':"", 'class':"form-control" }}) }}
+    <label></label>
+    {{ form_row(formodifCours.photoFile,{'attr':{'onChange' : "loadFile(event)",'placeholder':"" }}) }}
+
+
+    {{ form_end(formodifCours) }}
+
+{% endblock %}

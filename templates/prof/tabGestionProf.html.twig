@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} | Back Office | Tableau de la gestion des Professeurs{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://bootswatch.com/4/lumen//bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/styleTab.css') }}">
+
+{% endblock %}
+
+{% block body %}
+
+<H2>Tableau de la gestion des Professeurs</H2>
+      <div class="btn-right my-3 text-right">
+        <a href="{{ path('add_prof')}}" class="btn btn-warning">Ajouter un Professeur</a>
+      </div>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Description</th>
+        <th scope="col">Modifier</th>
+        <th scope="col">Supprimer</th>
+        <th scope="col">Show Prof</th>
+
+    </tr>
+    </thead>
+
+    {% for professor in professors %}
+    <tbody>
+
+    <tr class="table-default">
+{#        <th scope="row">{{ professor.id }}</th>#}
+{#        <td>{{ professor.nom }}</td>#}
+        <td data-label="ID">{{ professor.id }}</td>
+        <td data-label="Nom">{{ professor.nom }}</td>
+        <td data-label="Prenom">{{ professor.prenom }}</td>
+        <td data-label="Description">{{ professor.description | slice(0,100) }}...<a href="{{ path('showprof', {id:professor.id}) }}">
+                lire la suite</a></td>
+        <td data-label="Modifier"><a href="{{ path('modif_prof', {id:professor.id}) }}" class="btn btn-warning btn-sm">Modifier</a></td>
+        <td data-label="Modifier"><a href="{{ path('showprof', {id:professor.id}) }}" class="btn btn-warning btn-sm">ShowProf</a></td>
+        {% if is_granted('ROLE_ADMIN') %}
+        <td data-label="Supprimer"><a href="{{ path('delete_prof', {id: professor.id}) }}" class="btn btn-warning btn-sm">Supprimer</a></td>
+{#        {% else %}<td> </td>#}
+        {% endif %}
+
+    </tr>
+
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

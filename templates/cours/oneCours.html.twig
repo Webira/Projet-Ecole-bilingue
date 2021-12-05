@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+  {% block title %} {{ parent() }} - One Cours{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://bootswatch.com/4/lumen//bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+{% endblock %}
+{% block body %}
+    <div class="show-cours">
+
+{#        {% if cours is not null %}#}
+{#            {{cours.id}}#}
+{#        {% else %}#}
+{#            N/A#}
+{#        {% endif %}#}
+        <h2 class="display-4 my-4"><strong>{{ cours.titre }}</strong></h2>
+
+        <section class="cours">
+            <div class="card">
+            <div class="containerRow">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="{{ asset('images/imageCours/' ~ cours.photo) }}" class="d-block w-100" height="" alt="">
+                    </div>
+
+                    <div class="col-md-6">
+    {#                    {{ cours.dateAt | date("d-m-y") }}#}
+                        <h3 class="card-age">Pour les élèves   {{ cours.age }} ans</h3>
+                        <h3 class="card-day">{{ cours.day }} </h3>
+                        <h3 class="card-duree">{{ cours.duree }} heures</h3>
+                        <h5 class="card-price">{{ cours.price }} €/h</h5>
+                        <h5 class="card-class">numéro de la salle {{ cours.class }}</h5>
+                        <h5 class="card-professor">Avec le professeur {{ cours.professor.nom }} {{ cours.professor.prenom }}</h5>
+{#                        <h5 class="card-professor">Avec le professeur {{ cours.professor.nom  ~  cours.professor.prenom }}</h5>#}
+                        <h5 class="card-description">{{ cours.description | raw }}</h5>
+                        <a class="btn btn-secondary btn-sm" href="{{ path('add_eleve') }}"><h6>Inscription</h6></a>
+                        <a class="btn btn-secondary btn-sm" href="{{ path('ateliers') }}"><h6>Nos Ateliers</h6></a>
+
+                    </div>
+                </div>
+            </div>
+            </div>
+
+
+        </section>
+    </div>
+
+{% endblock %}
