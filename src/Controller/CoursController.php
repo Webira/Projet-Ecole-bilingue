@@ -55,7 +55,7 @@ class CoursController extends AbstractController
             ]);
         }
         return $this->render('cours/formuCours.html.twig', [
-            "formCours" => $form->createView(),
+            "formCours" => $form->createView(),     // nom de la variable passée sur twig
 
         ]);
     }

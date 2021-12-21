@@ -29,10 +29,6 @@ class SecurityAuthenticController extends AbstractController
 //        $entityManager->flush();
 ////////////////////
 
-//         if ($this->getUser()) {
-//             return $this->redirectToRoute('showeuser');
-//         }
-///////////////////
 
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();

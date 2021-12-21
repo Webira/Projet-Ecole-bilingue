@@ -2,24 +2,19 @@
 
 {% block title %}Accuiel{% endblock %}
 
-
 {% block body %}
 
     <div>
-        <h1>Pour plus d'information contacter nos</h1>
+        <h1>Pour plus d'information contacter nous</h1>
     </div>
     <hr>
-
     <div class="containerRow">
         <div class="row">
             <div class="col-md-6">
-                <img src="{{ asset('images/contacts/Pour-vous-rendre-à-Sorano_page-0001.jpg') }}" style="width: 100%" alt="">
+                <img src="{{ asset('images/contacts/Pour-vous-rendre-à-Sorano_page-0001.jpg') }}" style="width: 100%" alt="plan acces Espace Sorano">
                 <hr>
-
             </div>
-
             <div class="col-md-6" style="border-bottom: 1px;">
-
                 <h5><strong>Pour plus d'information sur l'inscription aux Ateliers créatifs pour les adultes et les enfants:</strong></h5>
                 <ul>
                     <li>Telephone: 06 84 55 05 90</li>
@@ -27,7 +22,6 @@
                     <li>Address: Espace Sorano 16, rue Charles Pathé 94300 Vincennes</li>
                 </ul>
                 <hr>
-
                 <p>Espace Sorano vous accueille tous les jours :</p>
                 <ul>
                     <li>du lundi au vendredi de 9h à 21h30h*</li>
@@ -41,16 +35,15 @@
               </div>
         </div>
     </div>
-
     <div>
 {#    {{ form_start(contactForm) }}#}
 {#    {{ form_row(contactForm.nom, {'label' : 'Nom d\'utilisateur', 'attr':{'class':"form-control" }}) }}#}
 {#    {{ form_row(contactForm.prenom, {'label' : 'Prenom d\'utilisateur', 'attr':{'class':"form-control" }}) }}#}
 {#    {{ form_row(contactForm.emailcontact, {'label' : 'Adresse email', 'attr':{'placeholder':"", 'class':"form-control" }}) }}#}
 {#    {{ form_row(contactForm.message, {'label' : 'Votre message','attr':{'placeholder':"Saisissez votre message", 'class':"form-control" }}) }}#}
-
 {#    {{ form_end(contactForm) }}#}
 
+        <h3>Formulaire de contact</h3>
         <form method="post" action="{{ path('contact') }}">
             <fieldset>
 
@@ -66,19 +59,13 @@
                     <label for="exampleInputEmail1" class="form-label mt-4">Emails</label>
                     <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre Email">
                 </div>
-{#                <div class="form-group">#}
-{#                    <label for="exampleSelect1" class="form-label mt-4">Motif</label>#}
-{#                    <select name="motif" class="form-select" id="exampleSelect1">#}
-{#                        <option>Demande de renseignement</option>#}
-{#                        <option>Réclamation</option>#}
-{#                   </select>#}
-{#                </div>#}
+
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Motif</label>
                     <select name="motif" class="form-control" id="exampleFormControlSelect1">
                         <option>Demande de renseignement</option>
                         <option>Réclamation</option>
-
+                        <option>Demande de modification de Compte User</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -86,7 +73,7 @@
                     <textarea name="message" class="form-control" id="exampleTextarea" rows="3">Saisissez votre message</textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button  class="btn btn-secondary">Valider</button>
             </fieldset>
         </form>
 

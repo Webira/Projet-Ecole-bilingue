@@ -46,8 +46,8 @@ class User implements UserInterface
      */
     private $email;
 
-    public $message;
-    public $emailcontact;
+//    public $message;
+//    public $emailcontact;
 
     /**
      * @ORM\Column(type="string", length=255)

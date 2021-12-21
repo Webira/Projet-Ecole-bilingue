@@ -1,142 +1,307 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:v="urn:schemas-microsoft-com:vml"
-      xmlns:o="urn:schemas-microsoft-com:office:office">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
 <head>
-    <!--[if gte mso 9]><xml>
-        <o:OfficeDocumentSettings>
-            <o:AllowPNG/>
-            <o:PixelsPerInch>96</o:PixelsPerInch>
-        </o:OfficeDocumentSettings>
-    </xml><![endif]-->
-    <!-- fix outlook zooming on 120 DPI windows devices -->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- So that mobile will display zoomed in -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- enable media queries for windows phone 8 -->
-    <meta name="format-detection" content="date=no"> <!-- disable auto date linking in iOS 7-9 -->
-    <meta name="format-detection" content="telephone=no"> <!-- disable auto telephone linking in iOS 7-9 -->
-    <title>Single Column</title>
-
+    <!-- Compiled with Bootstrap Email version: 1.0.0.alpha4 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
     <style type="text/css">
-        body {
-            margin: 0;
-            padding: 0;
-            -ms-text-size-adjust: 100%;
-            -webkit-text-size-adjust: 100%;
+        body, table, td {
+            font-family: Helvetica, Arial, sans-serif !important
         }
-
-        table {
-            border-spacing: 0;
-        }
-
-        table td {
-            border-collapse: collapse;
-        }
-
         .ExternalClass {
-            width: 100%;
+            width: 100%
         }
-
-        .ExternalClass,
-        .ExternalClass p,
-        .ExternalClass span,
-        .ExternalClass font,
-        .ExternalClass td,
-        .ExternalClass div {
-            line-height: 100%;
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+            line-height: 150%
         }
-
-        .ReadMsgBody {
-            width: 100%;
-            background-color: #ebebeb;
+        a {
+            text-decoration: none
         }
-
-        table {
+        * {
+            color: inherit
+        }
+        a[x-apple-data-detectors], u + #body a, #MessageViewBody a {
+            color: inherit;
+            text-decoration: none;
+            font-size: inherit;
+            font-family: inherit;
+            font-weight: inherit;
+            line-height: inherit
+        }
+        img {
+            -ms-interpolation-mode: bicubic
+        }
+        table:not([class^=s-]) {
+            font-family: Helvetica, Arial, sans-serif;
             mso-table-lspace: 0pt;
             mso-table-rspace: 0pt;
+            border-spacing: 0px;
+            border-collapse: collapse
         }
-
-        img {
-            -ms-interpolation-mode: bicubic;
+        table:not([class^=s-]) td {
+            border-spacing: 0px;
+            border-collapse: collapse
         }
-
-        .yshortcuts a {
-            border-bottom: none !important;
-        }
-
-        @media screen and (max-width: 599px) {
-            .force-row,
-            .container {
-                width: 100% !important;
-                max-width: 100% !important;
+        @media screen and (max-width: 600px) {
+            .max-w-48, .max-w-48 > tbody > tr > td {
+                max-width: 192px !important;
+                width: 100% !important
             }
-        }
-        @media screen and (max-width: 400px) {
-            .container-padding {
-                padding-left: 12px !important;
-                padding-right: 12px !important;
+            .max-w-56, .max-w-56 > tbody > tr > td {
+                max-width: 224px !important;
+                width: 100% !important
             }
-        }
-        .ios-footer a {
-            color: #aaaaaa !important;
-            text-decoration: underline;
-        }
-        a[href^="x-apple-data-detectors:"],
-        a[x-apple-data-detectors] {
-            color: inherit !important;
-            text-decoration: none !important;
-            font-size: inherit !important;
-            font-family: inherit !important;
-            font-weight: inherit !important;
-            line-height: inherit !important;
+            .max-w-96, .max-w-96 > tbody > tr > td {
+                max-width: 384px !important;
+                width: 100% !important
+            }
+            .w-lg-80, .w-lg-80 > tbody > tr > td {
+                width: auto !important
+            }
+            .w-full, .w-full > tbody > tr > td {
+                width: 100% !important
+            }
+            .w-32, .w-32 > tbody > tr > td {
+                width: 128px !important
+            }
+            .pt-4:not(table), .pt-4:not(.btn) > tbody > tr > td, .pt-4.btn td a, .py-4:not(table), .py-4:not(.btn) > tbody > tr > td, .py-4.btn td a {
+                padding-top: 16px !important
+            }
+            .pb-4:not(table), .pb-4:not(.btn) > tbody > tr > td, .pb-4.btn td a, .py-4:not(table), .py-4:not(.btn) > tbody > tr > td, .py-4.btn td a {
+                padding-bottom: 16px !important
+            }
+            *[class*=s-lg-] > tbody > tr > td {
+                font-size: 0 !important;
+                line-height: 0 !important;
+                height: 0 !important
+            }
+            .s-6 > tbody > tr > td {
+                font-size: 24px !important;
+                line-height: 24px !important;
+                height: 24px !important
+            }
+            .s-10 > tbody > tr > td {
+                font-size: 40px !important;
+                line-height: 40px !important;
+                height: 40px !important
+            }
         }
     </style>
 </head>
-
-<body style="margin:0; padding:0;" bgcolor="#F0F0F0" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
-
-<!-- 100% background wrapper (grey background) -->
-<table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" bgcolor="#F0F0F0">
+<body style="outline: 0; width: 100%; min-width: 100%; height: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Helvetica, Arial, sans-serif; line-height: 24px; font-weight: normal; font-size: 16px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; color: #000000; margin: 0; padding: 0; border: 0;"
+      bgcolor="#ffffff">
+<table class="body" valign="top" role="presentation" border="0" cellpadding="0" cellspacing="0"
+       style="outline: 0; width: 100%; min-width: 100%; height: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Helvetica, Arial, sans-serif; line-height: 24px; font-weight: normal; font-size: 16px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; color: #000000; margin: 0; padding: 0; border: 0;"
+       bgcolor="#ffffff">
+    <tbody>
     <tr>
-        <td align="center" valign="top" bgcolor="#F0F0F0" style="background-color: #F0F0F0;">
-
-            <br>
-            <img src="{{ cid }}" alt="">
-
-            <!-- 600px container (white background) -->
-            <table  border="0" width="600" cellpadding="0" cellspacing="0" class="container" style="width:600px;max-width:600px">
+        <td valign="top" style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
+            <table class="bg-black w-full" role="presentation" border="0" cellpadding="0" cellspacing="0"
+                   style="width: 100%;" bgcolor="#77f" width="100%">
+                <tbody>
                 <tr>
-                    <td class="container-padding header" align="left" style="font-family:Helvetica, Arial, sans-serif;font-size:24px;font-weight:bold;padding-bottom:12px;color:#DF4726;padding-left:24px;padding-right:24px">
-                        {{ motif }}
+                    <td style="line-height: 24px; font-size: 16px; width: 100%; margin: 0;" align="left"
+                        bgcolor="#77f" width="100%">
+                        <table class="container" role="presentation" border="0" cellpadding="0" cellspacing="0"
+                               style="width: 100%;">
+                            <tbody>
+                            <tr>
+                                <td align="center"
+                                    style="line-height: 24px; font-size: 16px; margin: 0; padding: 0 16px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align="center" role="presentation">
+                                        <tbody>
+                                        <tr>
+                                            <td width="600">
+                                    <![endif]-->
+                                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                           style="width: 100%; max-width: 600px; margin: 0 auto;">
+                                        <tbody>
+                                        <tr>
+                                            <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
+                                                <table class="s-10 w-full" role="presentation" border="0"
+                                                       cellpadding="0" cellspacing="0" style="width: 100%;"
+                                                       width="100%">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td style="line-height: 40px; font-size: 40px; width: 100%; height: 40px; margin: 0;"
+                                                            align="left" width="100%" height="40">
+                                                            &#160;
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="ax-center" role="presentation" align="center" border="0"
+                                                       cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td style="line-height: 24px; font-size: 16px; margin: 0;"
+                                                            align="left">
+                                                            <img class="w-32"
+                                                                 src="https://symfony.com/images/opengraph/symfony.png"
+                                                                 style="height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; width: 128px; border: 0 none;"
+                                                                 width="128">
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="s-10 w-full" role="presentation" border="0"
+                                                       cellpadding="0" cellspacing="0" style="width: 100%;"
+                                                       width="100%">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td style="line-height: 40px; font-size: 40px; width: 100%; height: 40px; margin: 0;"
+                                                            align="left" width="100%" height="40">
+                                                            &#160;
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="ax-center" role="presentation" align="center" border="0"
+                                                       cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td style="line-height: 24px; font-size: 16px; margin: 0;"
+                                                            align="left">
+                                                            <h1 class="text-white text-center"
+                                                                style="color: #ffffff; padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 36px; line-height: 43.2px; margin: 0;"
+                                                                align="center"> {{ subject }} venant de {{ from }}</h1>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="s-10 w-full" role="presentation" border="0"
+                                                       cellpadding="0" cellspacing="0" style="width: 100%;"
+                                                       width="100%">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td style="line-height: 40px; font-size: 40px; width: 100%; height: 40px; margin: 0;"
+                                                            align="left" width="100%" height="40">
+                                                            &#160;
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="ax-center" role="presentation" align="center" border="0"
+                                                       cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td style="line-height: 24px; font-size: 16px; margin: 0;"
+                                                            align="left">
+                                                            <img class="max-w-56  rounded-lg"
+                                                                 src="cid:logo"
+                                                                 style="height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; border-radius: 8px; max-width: 224px; width: 100%; border: 0 none;"
+                                                                 width="224">
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="s-10 w-full" role="presentation" border="0"
+                                                       cellpadding="0" cellspacing="0" style="width: 100%;"
+                                                       width="100%">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td style="line-height: 40px; font-size: 40px; width: 100%; height: 40px; margin: 0;"
+                                                            align="left" width="100%" height="40">
+                                                            &#160;
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="ax-center" role="presentation" align="center" border="0"
+                                                       cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td style="line-height: 24px; font-size: 16px; margin: 0;"
+                                                            align="left">
+                                                            <p class="max-w-96 lh-lg text-white text-center text-2xl"
+                                                               style="line-height: 2; font-size: 24px; color: #ffffff; max-width: 384px; -premailer-width: 384; width: 100%; margin: 0;"
+                                                               align="center">
+                                                                {{ message }}
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="s-10 w-full" role="presentation" border="0"
+                                                       cellpadding="0" cellspacing="0" style="width: 100%;"
+                                                       width="100%">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td style="line-height: 40px; font-size: 40px; width: 100%; height: 40px; margin: 0;"
+                                                            align="left" width="100%" height="40">
+                                                            &#160;
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="btn btn-yellow-300 rounded-full fw-800 text-5xl py-4 ax-center  w-full w-lg-80"
+                                                       role="presentation" align="center" border="0" cellpadding="0"
+                                                       cellspacing="0"
+                                                       style="border-radius: 9999px; border-collapse: separate !important; width: 320px; font-size: 48px; line-height: 57.6px; font-weight: 800 !important; margin: 0 auto;"
+                                                       width="320">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td style="line-height: 24px; font-size: 16px; border-radius: 9999px; width: 320px; font-weight: 800 !important; margin: 0;"
+                                                            align="center" bgcolor="#ffda6a" width="320">
+                                                            <a href="{{ liens }}"
+                                                               style="color: #111111; font-size: 16px; font-family: Helvetica, Arial, sans-serif; text-decoration: none; border-radius: 9999px; line-height: 20px; display: inline-block; font-weight: 800 !important; white-space: nowrap; background-color: #ffda6a; padding: 16px 12px; border: 1px solid #ffda6a;">
+                                                                {{ objectif }} </a>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="s-10 w-full" role="presentation" border="0"
+                                                       cellpadding="0" cellspacing="0" style="width: 100%;"
+                                                       width="100%">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td style="line-height: 40px; font-size: 40px; width: 100%; height: 40px; margin: 0;"
+                                                            align="left" width="100%" height="40">
+                                                            &#160;
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="s-10 w-full" role="presentation" border="0" cellpadding="0"
+                                           cellspacing="0" style="width: 100%;" width="100%">
+                                        <tbody>
+                                        <tr>
+                                            <td style="line-height: 40px; font-size: 40px; width: 100%; height: 40px; margin: 0;"
+                                                align="left" width="100%" height="40">
+                                                &#160;
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!--[if (gte mso 9)|(IE)]>
+                        </td>
+                        </tr>
+                        </tbody>
+                        </table>
+                        <![endif]-->
                     </td>
                 </tr>
-                <tr>
-                    <td class="container-padding content" align="left" style="padding-left:24px;padding-right:24px;padding-top:12px;padding-bottom:12px;background-color:#ffffff">
-                        <br>
-
-                        <div class="title" style="font-family:Helvetica, Arial, sans-serif;font-size:18px;font-weight:600;color:#374550">
-                            {{ nom }} {{ prenom }} {{ email }}
-                        </div>
-                        <br>
-
-                        <div class="body-text" style="font-family:Helvetica, Arial, sans-serif;font-size:14px;line-height:20px;text-align:left;color:#333333">
-                            {{ message }}
-                            <br><br>
-                        </div>
-
-                    </td>
-                </tr>
+                </tbody>
             </table>
-
-            <br><br>
-
         </td>
     </tr>
-    <br><br>
+    </tbody>
 </table>
-<br>
-<br>
-
-
-</body>
+</td>
+</tr>
+</tbody>
+</table></body>
 </html>
+

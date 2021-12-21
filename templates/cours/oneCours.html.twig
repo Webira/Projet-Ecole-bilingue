@@ -21,16 +21,16 @@
             <div class="containerRow">
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="{{ asset('images/imageCours/' ~ cours.photo) }}" class="d-block w-100" height="" alt="">
+                        <img src="{{ asset('images/imageCours/' ~ cours.photo) }}" class="d-block w-100" height="" alt="image atelier">
                     </div>
 
                     <div class="col-md-6">
     {#                    {{ cours.dateAt | date("d-m-y") }}#}
                         <h3 class="card-age">Pour les élèves   {{ cours.age }} ans</h3>
                         <h3 class="card-day">{{ cours.day }} </h3>
-                        <h3 class="card-duree">{{ cours.duree }} heures</h3>
+                        <h3 class="card-duree">{{ cours.duree }}</h3>
                         <h5 class="card-price">{{ cours.price }} €/h</h5>
-                        <h5 class="card-class">numéro de la salle {{ cours.class }}</h5>
+                        <h5 class="card-class">salle N {{ cours.class }}</h5>
                         <h5 class="card-professor">Avec le professeur {{ cours.professor.nom }} {{ cours.professor.prenom }}</h5>
 {#                        <h5 class="card-professor">Avec le professeur {{ cours.professor.nom  ~  cours.professor.prenom }}</h5>#}
                         <h5 class="card-description">{{ cours.description | raw }}</h5>

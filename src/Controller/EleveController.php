@@ -36,8 +36,6 @@ class EleveController extends AbstractController
                     $datetime2 = new \DateTime('1993-09-28');
                     $age = $datetime1->diff($datetime2, true)->y;       // le y = nombre d'années ex : 22
                 */
-
-
     /**
      * @Route("/eleves", name ="eleves")
      */
@@ -54,6 +52,7 @@ class EleveController extends AbstractController
 
     /**
      * @Route("/add_eleve", name="add_eleve")
+     * @IsGranted("ROLE_USER")
      *
      */
     public function addEleve( Request $request, EntityManagerInterface $manager){
@@ -148,8 +147,6 @@ class EleveController extends AbstractController
         return $this->redirectToRoute('eleves');
 
     }
-
-
 
 
 }

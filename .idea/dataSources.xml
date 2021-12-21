@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:mysql://localhost:3306/projet-ecole</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="wq4o3ces_plateforme-ira@lhcp3232.webapps.net" uuid="66cf834e-1e3c-4761-9cc9-f80c44b1c574">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://lhcp3232.webapps.net:3306/wq4o3ces_plateforme-ira</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

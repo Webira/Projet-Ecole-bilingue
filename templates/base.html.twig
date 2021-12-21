@@ -7,7 +7,7 @@
 {#  Titre de ma page #}
             <title>{% block title %}Ecole russe pour les enfants bilingues{% endblock %}</title>
 
-{#        Description du site: max 200 caractères : sert au SEO#}
+{#     Description du site: max 200 caractères : sert au SEO#}
              <meta name="description" content="Ateliers creatifs En mode bilingue - Ecole russe pour les enfants bilingues.
               Une plateforme d’inscription d'élevés en ligne, à votre service.">
             {% block stylesheets %}
@@ -25,11 +25,11 @@
     </head>
 {#    Debut de balise Body#}
     <body>
-{#        Haut de page#}
+{#     Haut de page#}
          <header class="navbg">
-{#             Navigation#}
+{#     Navigation#}
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <img class="Image_logo" src="{{ asset('images/EN_mode_bilingue_1.jpg') }}" data-hook="image-container" width="85px" height="65px" alt="...">
+                <img class="Image_logo" src="{{ asset('images/EN_mode_bilingue_1.jpg') }}" data-hook="image-container" width="85px" height="65px" alt="logotype En mode bilingue">
 
                 <div class="container-fluid">
 
@@ -42,7 +42,7 @@
                     <div class="collapse navbar-collapse flex justify-content-end" id="navbarSupportedContent">
             {#    Groupe de listes #}
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                {#         Elements de listes #}
+                {#    Elements de listes #}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path ('accueilSite') }}"><strong>Accueil</strong></a>
                             </li>
@@ -51,7 +51,9 @@
                                 <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                                     <li><a class="dropdown-item" href="{{ path ('ateliers') }}">Ateliers créatifs</a></li>
                                     <li><a class="dropdown-item" href="{{ path ('apropos') }}">Sur nos activités</a></li>
+                                    {% if app.user %}
                                     <li><a class="dropdown-item" href="{{ path ('add_eleve') }}">Inscription aux ateliers</a></li>
+                                    {% endif %}
                                     <li><a class="dropdown-item" href="{{ path ('contact') }}">Contact</a></li>
                                 </ul>
                             </li>
@@ -60,26 +62,10 @@
                                     <strong>Nos Ateliers</strong>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                    <li><a class="dropdown-item" href="{{ path ('showtypecours', { type: 'Atelier conte'}) }}">Atelier conte</a></li>
-                                    <li><a class="dropdown-item" href="{{ path ('showtypecours', { type: 'Atelier lecture'}) }}">Atelier lecture </a></li>
-                                    <li><a class="dropdown-item" href="{{ path ('showtypecours', { type: 'Atelier écriture'}) }}">Atelier écriture </a></li>
-                                    <li><a class="dropdown-item" href="{{ path ('showtypecours', { type: 'Atelier d écriture creative'}) }}">Atelier d'écriture creative </a></li>
-                                    <li><a class="dropdown-item" href="{{ path ('showtypecours', { type: 'Atelier théâtre'}) }}">Atelier théâtre </a></li>
-                                    <li><a class="dropdown-item" href="{{ path ('showtypecours', { type: 'Eveil musicale'}) }}">Eveil musicale</a></li>
-                                    <li><a class="dropdown-item" href="{{ path ('showtypecours', { type: 'Atelier de dance'}) }}">Atelier de dance</a></li>
-                                    <li><a class="dropdown-item" href="{{ path ('showtypecours', { type: 'Atelier gymnastique rythmique'}) }}">Atelier gymnastique rythmique </a></li>
-                                    <li><a class="dropdown-item" href="{{ path ('showtypecours', { type: 'Atelier science enfants'}) }}">Atelier science enfants </a></li>
-                                    <li><a class="dropdown-item" href="{{ path ('showtypecours', { type: 'Atelier dessin'}) }}">Atelier dessin </a></li>
-                                    <li><a class="dropdown-item" href="{{ path ('showtypecours', { type: 'Atelier architecture'}) }}">Atelier architecture </a></li>
-                                    <li><a class="dropdown-item" href="{{ path ('showtypecours', { type: 'Atelier 3D mathématique'}) }}">Atelier 3D mathématique </a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="{{ path ('showtypecours', { type: 'Russe pour non russophones'}) }}">Russe pour non russophones</a></li>
-                                    <li><a class="dropdown-item" href="{{ path ('showtypecours', { type: 'Excursions du dimanche'}) }}">Excursions du dimanche</a></li>
-                                    <li><a class="dropdown-item" href="{{ path ('showtypecours', { type: 'Projets artistiques'}) }}">Projets artistiques</a></li>
-                                    <li><a class="dropdown-item" href="{{ path ('showtypecours', { type: 'Ateliers en ligne'}) }}">Ateliers en ligne</a></li>
+                                    <li><a class="dropdown-item" href="{{ path ('showtypecours', { type: 'Atelier conte'}) }}">Plateforme d'inscription</a></li>
+
                                 </ul>
                             </li>
-
 
                              {% if not app.user %}
                                 <li class="nav-item">
@@ -121,7 +107,7 @@
         </header>
 
         <main>
-            <div class="container pt-md-4 mt-4 h-100" style="min-height: 85vh">
+            <div class="container pt-md-4 mt-4 h-100" style="min-height: 75vh">
 
         {% block body %}{% endblock %}
             </div>
@@ -131,7 +117,8 @@
             <div class="row">
                 <div class="col-12 col-md">
                     <img class="mb-2" src="" alt="" style="width: 50%;">
-                    <small class="d-block mb-3 ml-5 text-muted">&copy; 2021</small>
+                    <small class="d-block mb-3 ml-5 text-muted">&copy; 2021 Plateforme d'inscription</small>
+                    <small class="d-block mb-3 ml-5 text-muted">Développeuse Platonova Irina</small>
                 </div>
                 <div class="col-6 col-md ">
                     <h5>Activites</h5>

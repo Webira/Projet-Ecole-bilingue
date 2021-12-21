@@ -15,7 +15,7 @@
     </div>
     <a class="btn btn-secondary" href="{{ path ('app_login') }}"><strong>Connectez-vous à présent pour continuer à naviguer</strong></a>
 
-    <h3>Les Eleves :</h3>
+    <h2>Les Eleves :</h2>
     {% if user.eleves is empty %}
         <div>
             <h5>Aucun eleves</h5>
@@ -51,7 +51,7 @@
                                     <h5 class="card-title">{{ cours.titre }}</h5>
                                     <h5 class="card-subtitle mb-2 text-muted">{{ cours.day }}</h5>
                                     <h5 class="card-duree">{{ cours.duree }}</h5>
-                                    <h5 class="card-professor">Professor: {{ cours.professor.nom }}</h5>
+                                    <h5 class="card-professor">Professeur: {{ cours.professor.nom }}</h5>
                                     <p class="card-text">{{ cours.description | slice(0,200) }}...<a href="">
                                             lire la suite</a></p>
                                     <a href="{{ path('showcours', {id: cours.id }) }}" class="btn btn-secondary">Atelier</a>
